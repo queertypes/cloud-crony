@@ -1,0 +1,4 @@
+include tools/*
+include conf/*
+include README.rst
+
