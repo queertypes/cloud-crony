@@ -2,6 +2,13 @@
 API Guide
 *********
 
+**Table of Contents**
+
+.. contents::
+    :local:
+    :depth: 2
+    :backlinks: none
+
 Here's the API synopsis::
 
     # Schedule creation and access

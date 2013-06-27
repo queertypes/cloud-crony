@@ -28,6 +28,39 @@ Features
 * RESTful - client bindings can be in any language that can speak HTTP/JSON
 * Familiar scheduling syntax - welcome back, Cron.
 
+==========
+Extensions
+==========
+
+* Scheduling profiles
+    - Maximum per task runtime
+    - Maximum concurrent tasks
+    - Preemption allowed
+* Task groups - in conjunction with profiles
+    - /schedules/{group}/tasks/
+    - Allow special configuration for group
+* Autoscaling
+* Preemptive scheduling
+* Prioritized scheduling
+    - Assign task priorities
+    - Choose next task based on priority + dealine
+* Real-time scheduling
+    - Fail tasks that take too long
+    - Specify task deadline as well as periodicity
+        * Task deadline given relative to periodicity
+* Improved security
+    - Better sandboxing
+* Error reporting task specification
+    - error_hook: task to handle main process errors
+    - similar to progress hook
+    - Appends them to GET /schedules/{id} "errors" field
+* Client bindings
+* Backend configuration options and drivers
+    - MongoDB
+    - Redis
+    - sqlite
+    - Some sort of Cloud DB
+
 ===========
 Development
 ===========
