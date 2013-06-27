@@ -68,7 +68,7 @@ POST /schedules
 This is scheduled task creation.
 
 The schedule is the most interesting field. It is specified in
-extended CRON format::
+extended `cron format`_::
 
     ---------------- seconds: 0-59
     | -------------- minutes: 0-59
@@ -207,4 +207,5 @@ POST /schedules/{id}/cancel
 Terminates a running task. If the task is not running, this will still
 return an OK, since the end result is the same.
 
+.. _cron format: https://en.wikipedia.org/wiki/Cron#Format
 .. _subprocess.Popen: http://docs.python.org/2/library/subprocess.html#subprocess.Popen
