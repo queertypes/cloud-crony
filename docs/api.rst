@@ -51,6 +51,8 @@ A summary view of all tasks.
     Connection: keep-alive
     Content-Length: 9001
 
+.. code-block:: json
+
     [
         {
             "id": 12345,
