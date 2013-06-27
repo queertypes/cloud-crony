@@ -54,7 +54,7 @@ A summary view of all tasks.
             "name": "My Secondary Task",
             "location": "https://cloudstorage.com/tasks/seconds.py",
             "schedule": "15 * * * * * *",
-            "enabled": True
+            "enabled": true
          },
          {
              ...
@@ -106,7 +106,7 @@ Request:
         },
         "progress_hook": null,
         "schedule": "15 * * * * * *",
-        "enabled": True
+        "enabled": true
     }
 
 If cron syntax is too cryptic for you, the following alternative format is supported for schedules:
@@ -131,7 +131,7 @@ If cron syntax is too cryptic for you, the following alternative format is suppo
             "weekday": "*",
             "year": "*"
         }
-        "enabled": True
+        "enabled": true
     }
 
 Response:
@@ -164,10 +164,10 @@ scheduled task.
         "name": "My Secondary Task",
         "task": {
             "location": "https://cloudstorage.com/tasks/seconds.py",
-            "args": ...
+            "args": [],
         },
         "schedule": "15 * * * * * *",
-        "enabled": True,
+        "enabled": true,
         "progress": 23,
         "state": "running",
         "next": "2013-12-28T14:54:37.938283"
@@ -206,3 +206,5 @@ POST /schedules/{id}/cancel
 
 Terminates a running task. If the task is not running, this will still
 return an OK, since the end result is the same.
+
+.. _subprocess.Popen: http://docs.python.org/2/library/subprocess.html#subprocess.Popen
