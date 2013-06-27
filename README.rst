@@ -17,16 +17,18 @@ RESTful Scheduling as a Service: Scheduled Tasks for the Cloud
 Features
 ========
 
-* Easy to deploy
-    - one command to acquire libraries (pip!)
-    - one command worker registration
-    - one command API setup
-* Guaranteed task execution - no missed jobs
-* Secure by default - sandboxed execution for workers
-* Autoscaling - need more workers? Cloud Crony can spin them up for you
-* Python 2.7+ and 3.3+ supported
-* RESTful - client bindings can be in any language that can speak HTTP/JSON
-* Familiar scheduling syntax - welcome back, Cron.
+Here are some of the planned features for the first release::
+
+    * Easy to deploy
+        - one command to acquire libraries (pip!)
+        - one command worker registration
+        - one command API setup
+    * Guaranteed task execution - no missed jobs
+    * Secure by default - sandboxed execution for workers
+    * Autoscaling - need more workers? Cloud Crony can spin them up for you
+    * Python 2.7+ and 3.3+ supported
+    * RESTful - client bindings can be in any language that can speak HTTP/JSON
+    * Familiar scheduling syntax - welcome back, Cron.
 
 ==========
 Extensions
