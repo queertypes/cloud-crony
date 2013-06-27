@@ -94,10 +94,7 @@ the task syntax.
 
 Request:
 
-.. code-block:: http
-
-    POST /schedules
-    Content-Type: application/json
+.. code-block:: json
 
     {
         "name": "My Secondary Task",
@@ -112,11 +109,36 @@ Request:
         "enabled": True
     }
 
+If cron syntax is too cryptic for you, the following alternative format is supported for schedules:
+
+.. code-block:: json
+
+    {
+        "name": "My Secondary Task",
+        "task": {
+            "location": "https://cloudstorage.com/tasks/seconds.py",
+            "args": [
+                "--option=tacos", "-v", "-v", "-x", "100"
+            ]
+        },
+        "progress_hook": null,
+        "schedule": {
+            "seconds": "15",
+            "minutes": "*",
+            "hours": "*",
+            "day_of_month": "*",
+            "month": "*",
+            "weekday": "*",
+            "year": "*"
+        }
+        "enabled": True
+    }
+
 Response:
 
 .. code-block:: http
 
-    HTTP/200 OK
+    HTTP/1.1 200 OK
 
 -------------------
 GET /schedules/{id}
@@ -130,6 +152,8 @@ scheduled task.
     HTTP/1.1 200 OK
     Connection: keep-alive
     Content-Length: 9001
+
+.. code-block:: json
 
     {
         "id": 12345,
