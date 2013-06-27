@@ -13,9 +13,9 @@ RESTful Scheduling as a Service: Scheduled Tasks for the Cloud
     :depth: 2
     :backlinks: none
 
-********
+========
 Features
-********
+========
 
 * Easy to deploy
     - one command to acquire libraries (pip!)
@@ -28,9 +28,9 @@ Features
 * RESTful - client bindings can be in any language that can speak HTTP/JSON
 * Familiar scheduling syntax - welcome back, Cron.
 
-***********
+===========
 Development
-***********
+===========
 
 The core maintainer is Alejandro Cabrera
 <alejandro.cabrera@rackspace.com>. Feel free to reach out to him with
