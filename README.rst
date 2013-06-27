@@ -36,6 +36,7 @@ Extensions
 
 The following are a list of potential extensions to the scheduling service::
 
+    * Tenanted service - namespace schedules by tenant
     * Scheduling profiles 
         * Maximum per task runtime
         * Maximum concurrent tasks
