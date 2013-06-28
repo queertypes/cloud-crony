@@ -161,6 +161,10 @@ class Schedule(object):
         self._format = form
         self._parsed = parse(form)
 
+    def __repr__(self):
+        form = '<CronSchedule cron:{0} next:{1}>'
+        return form.format(self.cron, self.next())
+
     @property
     def cron(self):
         return self._format
