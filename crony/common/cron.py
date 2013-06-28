@@ -7,10 +7,6 @@ def _replace_star_with_bounds(s, lower, upper):
     return s.replace('*', '{0}-{1}'.format(lower, upper))
 
 
-def _replace_L_with_upper(s, upper):
-    return s.replace('L', str(upper))
-
-
 # This regex will match the following:
 # '0' => ('0', '', None, None)
 # '0/2' => ('0', '/2', None, '2')
@@ -31,18 +27,25 @@ _wkd_lookup = {'mon': '0', 'tue': '1', 'wed': '2',
                'sun': '6'}
 
 
-def _normalize(field, lower, upper):
+def _normalize(name, field, lower, upper):
     field = field.lower()
     field = _replace_star_with_bounds(field, lower, upper)
-    field = _replace_L_with_upper(field, upper)
 
     for month in _mon_lookup.keys():
         if field.find(month) >= 0:
-            field = field.replace(month, _month_lookup[month])
+            if name == 'month':
+                field = field.replace(month, _mon_lookup[month])
+            else:
+                msg = 'month names should not appear in {0}'
+                raise ValueError(msg.format(name))
 
     for weekday in _wkd_lookup.keys():
         if field.find(weekday) >= 0:
-            field = field.replace(weekday, _wkd_lookup[weekday])
+            if name == 'dow':
+                field = field.replace(weekday, _wkd_lookup[weekday])
+            else:
+                msg = 'weekday names should not appear in {0}'
+                raise ValueError(msg.format(name))
 
     return field
                  
@@ -71,12 +74,11 @@ def _validate(field, name, lower, upper, rest, start, top):
         if top is not None and int(upper) < int(top):
             msg = 'parsing {0}: {1} must be less than {2}'
             raise ValueError(msg.format(name, top, upper))
-        print(start, top, lower, upper)
 
 
 def parse_field(field, bounds):
     name, lower, upper = bounds
-    field_norm = _normalize(field, lower, upper)
+    field_norm = _normalize(name, field, lower, upper)
     groups = _cron_parser.match(field_norm).groups()
     if not groups:
         raise ValueError('{0} is not a valid cron field spec'.format(field))
