@@ -84,7 +84,7 @@ extended `cron format`_::
     | | ------------ hours: 0-23
     | | | ---------- day of month: 1-31
     | | | | -------- month: 1-12
-    | | | | | ------ weekday: 0-6 [Sunday == 0]
+    | | | | | ------ weekday: 0-6 [Monday == 0]
     | | | | | | ---- year: now - 2999+
     | | | | | | |
     * * * * * * *
