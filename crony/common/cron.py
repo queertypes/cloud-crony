@@ -1,5 +1,4 @@
 import datetime
-import time
 import re
 
 
@@ -48,12 +47,12 @@ def _normalize(name, field, lower, upper):
                 raise ValueError(msg.format(name))
 
     return field
-                 
+
 
 def _validate(field, name, lower, upper, rest, start, top):
     # validate comma input
     if rest.find(',') >= 0:
-        if field.find('/') >= 0  or field.find('-') >= 0:
+        if field.find('/') >= 0 or field.find('-') >= 0:
             msg = ('comma expressions are not allowed with range '
                    'or step expressions\n  in {0}').format(field)
             raise ValueError(msg)
@@ -161,7 +160,7 @@ class Schedule(object):
                            else submitted)
         self._format = form
         self._parsed = parse(form)
-        
+
     @property
     def cron(self):
         return self._format
@@ -176,7 +175,6 @@ class Schedule(object):
         if len(self._parsed) == 7:
             years = self._parsed[-1]
         y, m, d, h, minute, s, dow = now.timetuple()[:7]
-        dom = now.day
         s2, minute = _carry_add_search(s, minute, secs)
         minute2, h = _carry_add_search(minute, h, mins)
         if minute2 != minute:

@@ -4,6 +4,7 @@ from setuptools import setup, find_packages
 
 pip_requires = os.path.join(os.getcwd(), 'tools', 'requirements.txt')
 
+
 def file_lines(path):
     reqs = None
     with open(path, 'rt') as f:
@@ -23,7 +24,8 @@ setup(
     version=parse_version(),
     author='Alejandro Cabrera',
     author_email='alejandro.cabrera@rackspace.com',
-    description='RESTful Scheduling as a Service: Scheduled Tasks for the Cloud.',
+    description=('RESTful Scheduling as a Service: '
+                 'Scheduled Tasks for the Cloud.'),
     long_description=open('README.rst').read(),
     url='https://github.com/cabrera/cloud-crony',
     packages=find_packages(),
