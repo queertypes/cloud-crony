@@ -70,15 +70,15 @@ The following are a list of potential extensions to the scheduling service::
 Development
 ===========
 
-The core maintainer is Alejandro Cabrera
-<alejandro.cabrera@rackspace.com>. Feel free to reach out to him with
+The core maintainer is Allele Dev
+<allele.dev@gmail.com>. Feel free to reach out to him with
 any questions you have.
 
 =======
 License
 =======
 
-Copyright 2013 Alejandro Cabrera
+Copyright 2016 Allele Dev
 
 Licensed under the Apache License, Version 2.0 (the "License"); you
 may not use this file except in compliance with the License.  You may
